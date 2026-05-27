@@ -461,13 +461,18 @@ const nl = {
           ipAddress: 'IP-adres',
           subnetMask: 'Subnetmasker',
           router: 'Router',
+          band: 'Bandbreedte',
           wired: 'Bekabeld',
           wireless: 'Draadloos',
           signalStrength: 'Signaalsterkte',
           rxRate: 'Ontvangstsnelheid',
           txRate: 'Verzendsnelheid',
           none: 'Geen'
-        }
+        },
+        warningTitle: 'Warning: Network Change',
+        warningDescription: 'Saving network changes may interrupt the current web session. The device may become temporarily unreachable.',
+        warningIpChange: 'Static IP changes may move the device to a different address.',
+        warningConfirm: 'Apply'
       },
       tailscale: {
         title: 'Tailscale',

@@ -457,13 +457,18 @@ const da = {
           ipAddress: 'IP-adresse',
           subnetMask: 'Undernetmaske',
           router: 'Router',
+          band: 'Bånd',
           wired: 'Kablet',
           wireless: 'Trådløst',
           signalStrength: 'Signalstyrke',
           rxRate: 'Modtagelseshastighed',
           txRate: 'Sendehastighed',
           none: 'Ingen'
-        }
+        },
+        warningTitle: 'Warning: Network Change',
+        warningDescription: 'Saving network changes may interrupt the current web session. The device may become temporarily unreachable.',
+        warningIpChange: 'Static IP changes may move the device to a different address.',
+        warningConfirm: 'Apply'
       },
       tailscale: {
         title: 'Tailscale',

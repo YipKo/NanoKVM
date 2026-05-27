@@ -453,13 +453,18 @@ const ko = {
           ipAddress: 'IP 주소',
           subnetMask: '서브넷 마스크',
           router: '라우터',
+          band: '대역',
           wired: '유선',
           wireless: '무선',
           signalStrength: '신호 강도',
           rxRate: '수신 속도',
           txRate: '송신 속도',
           none: '없음'
-        }
+        },
+        warningTitle: 'Warning: Network Change',
+        warningDescription: 'Saving network changes may interrupt the current web session. The device may become temporarily unreachable.',
+        warningIpChange: 'Static IP changes may move the device to a different address.',
+        warningConfirm: 'Apply'
       },
       tailscale: {
         title: 'Tailscale',

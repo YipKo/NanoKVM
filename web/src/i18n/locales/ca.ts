@@ -455,13 +455,18 @@ const ca = {
           ipAddress: 'Adreça IP',
           subnetMask: 'Màscara de subxarxa',
           router: 'Encaminador',
+          band: 'Banda',
           wired: 'Amb cable',
           wireless: 'Sense fil',
           signalStrength: 'Intensitat del senyal',
           rxRate: 'Velocitat de recepció',
           txRate: 'Velocitat de transmissió',
           none: 'Cap'
-        }
+        },
+        warningTitle: 'Warning: Network Change',
+        warningDescription: 'Saving network changes may interrupt the current web session. The device may become temporarily unreachable.',
+        warningIpChange: 'Static IP changes may move the device to a different address.',
+        warningConfirm: 'Apply'
       },
       tailscale: {
         title: 'Tailscale',

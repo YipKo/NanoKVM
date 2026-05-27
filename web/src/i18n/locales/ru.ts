@@ -460,13 +460,18 @@ const ru = {
           ipAddress: 'IP-адрес',
           subnetMask: 'Маска подсети',
           router: 'Маршрутизатор',
+          band: 'Диапазон',
           wired: 'Проводная',
           wireless: 'Беспроводная',
           signalStrength: 'Уровень сигнала',
           rxRate: 'Скорость приёма',
           txRate: 'Скорость передачи',
           none: 'Нет'
-        }
+        },
+        warningTitle: 'Warning: Network Change',
+        warningDescription: 'Saving network changes may interrupt the current web session. The device may become temporarily unreachable.',
+        warningIpChange: 'Static IP changes may move the device to a different address.',
+        warningConfirm: 'Apply'
       },
       tailscale: {
         title: 'Tailscale',

@@ -451,13 +451,18 @@ const th = {
           ipAddress: 'ที่อยู่ IP',
           subnetMask: 'ซับเน็ตมาสก์',
           router: 'เราเตอร์',
+          band: 'ย่านความถี่',
           wired: 'แบบมีสาย',
           wireless: 'แบบไร้สาย',
           signalStrength: 'ความแรงของสัญญาณ',
           rxRate: 'อัตราการรับ',
           txRate: 'อัตราการส่ง',
           none: 'ไม่มี'
-        }
+        },
+        warningTitle: 'Warning: Network Change',
+        warningDescription: 'Saving network changes may interrupt the current web session. The device may become temporarily unreachable.',
+        warningIpChange: 'Static IP changes may move the device to a different address.',
+        warningConfirm: 'Apply'
       },
       tailscale: {
         title: 'Tailscale',

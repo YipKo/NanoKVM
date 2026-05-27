@@ -460,13 +460,18 @@ const pl = {
           ipAddress: 'Adres IP',
           subnetMask: 'Maska podsieci',
           router: 'Router',
+          band: 'Pasmo',
           wired: 'Przewodowa',
           wireless: 'Bezprzewodowa',
           signalStrength: 'Siła sygnału',
           rxRate: 'Prędkość odbierania',
           txRate: 'Prędkość wysyłania',
           none: 'Brak'
-        }
+        },
+        warningTitle: 'Warning: Network Change',
+        warningDescription: 'Saving network changes may interrupt the current web session. The device may become temporarily unreachable.',
+        warningIpChange: 'Static IP changes may move the device to a different address.',
+        warningConfirm: 'Apply'
       },
       tailscale: {
         title: 'Tailscale',

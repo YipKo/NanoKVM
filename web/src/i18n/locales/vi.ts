@@ -455,13 +455,18 @@ const vi = {
           ipAddress: 'Địa chỉ IP',
           subnetMask: 'Mặt nạ mạng con',
           router: 'Bộ định tuyến',
+          band: 'Băng tần',
           wired: 'Có dây',
           wireless: 'Không dây',
           signalStrength: 'Cường độ tín hiệu',
           rxRate: 'Tốc độ nhận',
           txRate: 'Tốc độ gửi',
           none: 'Không có'
-        }
+        },
+        warningTitle: 'Warning: Network Change',
+        warningDescription: 'Saving network changes may interrupt the current web session. The device may become temporarily unreachable.',
+        warningIpChange: 'Static IP changes may move the device to a different address.',
+        warningConfirm: 'Apply'
       },
       tailscale: {
         title: 'Tailscale',

@@ -9,6 +9,7 @@ type NetworkInfo = {
   address?: string;
   subnetMask?: string;
   gateway?: string;
+  band?: string;
   signal?: string;
   rxRate?: string;
   txRate?: string;
@@ -86,6 +87,10 @@ const NetworkCard = ({ info, isLast = false }: { info: NetworkInfo; isLast?: boo
         <InfoRow label={t('settings.network.dns.router')} value={info.gateway} isLast />
         {isWireless(info) && (
           <>
+            <WirelessRow
+              label={t('settings.network.dns.band', { defaultValue: 'Band' })}
+              value={info.band}
+            />
             <WirelessRow
               label={t('settings.network.dns.signalStrength', { defaultValue: 'Signal Strength' })}
               value={info.signal}

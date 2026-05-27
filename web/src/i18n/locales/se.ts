@@ -454,13 +454,18 @@ const se = {
           ipAddress: 'IP-adress',
           subnetMask: 'Subnätmask',
           router: 'Router',
+          band: 'Frekvensband',
           wired: 'Trådbundet',
           wireless: 'Trådlöst',
           signalStrength: 'Signalstyrka',
           rxRate: 'Mottagningshastighet',
           txRate: 'Sändningshastighet',
           none: 'Ingen'
-        }
+        },
+        warningTitle: 'Warning: Network Change',
+        warningDescription: 'Saving network changes may interrupt the current web session. The device may become temporarily unreachable.',
+        warningIpChange: 'Static IP changes may move the device to a different address.',
+        warningConfirm: 'Apply'
       },
       tailscale: {
         title: 'Tailscale',

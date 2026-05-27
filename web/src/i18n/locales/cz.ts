@@ -458,13 +458,18 @@ const cz = {
           ipAddress: 'IP adresa',
           subnetMask: 'Maska podsítě',
           router: 'Router',
+          band: 'Pásmo',
           wired: 'Drátová',
           wireless: 'Bezdrátová',
           signalStrength: 'Síla signálu',
           rxRate: 'Rychlost příjmu',
           txRate: 'Rychlost odesílání',
           none: 'Žádné'
-        }
+        },
+        warningTitle: 'Warning: Network Change',
+        warningDescription: 'Saving network changes may interrupt the current web session. The device may become temporarily unreachable.',
+        warningIpChange: 'Static IP changes may move the device to a different address.',
+        warningConfirm: 'Apply'
       },
       tailscale: {
         title: 'Tailscale',

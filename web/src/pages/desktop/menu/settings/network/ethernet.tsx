@@ -5,6 +5,7 @@ import { useTranslation } from 'react-i18next';
 
 import * as api from '@/api/network.ts';
 import type { EthernetIPMode, EthernetSecurityMode } from '@/api/network.ts';
+import { confirmNetworkSave } from './confirm-network-save';
 
 type EAPMethod = 'PEAP' | 'TTLS' | 'TLS' | 'PWD' | 'LEAP';
 
@@ -148,6 +149,9 @@ export const Ethernet = () => {
     if (ipMode === 'manual' && !isValidSubnetMask(subnetMask)) return;
     if (ipMode === 'manual' && gateway && !isValidIPv4(gateway)) return;
     if (status !== '') return;
+
+    const confirmed = await confirmNetworkSave(t);
+    if (!confirmed) return;
 
     setStatus('saving');
 

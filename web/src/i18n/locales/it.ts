@@ -461,13 +461,18 @@ const it = {
           ipAddress: 'Indirizzo IP',
           subnetMask: 'Subnet mask',
           router: 'Router',
+          band: 'Banda',
           wired: 'Cablata',
           wireless: 'Wireless',
           signalStrength: 'Intensità segnale',
           rxRate: 'Velocità ricezione',
           txRate: 'Velocità trasmissione',
           none: 'Nessuno'
-        }
+        },
+        warningTitle: 'Warning: Network Change',
+        warningDescription: 'Saving network changes may interrupt the current web session. The device may become temporarily unreachable.',
+        warningIpChange: 'Static IP changes may move the device to a different address.',
+        warningConfirm: 'Apply'
       },
       tailscale: {
         title: 'Tailscale',

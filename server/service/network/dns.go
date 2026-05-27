@@ -412,7 +412,7 @@ func getDNSInfo() proto.DNSInfo {
 	info.Type = getDNSInterfaceType(iface.Name)
 	info.Address, info.SubnetMask = getIPv4AddressInfo(*iface)
 	if strings.EqualFold(info.Type, "Wireless") {
-		info.Signal, info.RxRate, info.TxRate = getWirelessLinkInfo(iface.Name)
+		info.Signal, info.RxRate, info.TxRate, info.Band = getWirelessLinkInfo(iface.Name)
 	}
 
 	return info
@@ -449,7 +449,7 @@ func getDNSInfos() []proto.DNSInfo {
 			Gateway:    getInterfaceGateway(iface.Name),
 		}
 		if ifaceType == "Wireless" {
-			info.Signal, info.RxRate, info.TxRate = getWirelessLinkInfo(iface.Name)
+			info.Signal, info.RxRate, info.TxRate, info.Band = getWirelessLinkInfo(iface.Name)
 		}
 
 		infos = append(infos, info)
@@ -465,20 +465,23 @@ func getDNSInfos() []proto.DNSInfo {
 	return infos
 }
 
-func getWirelessLinkInfo(ifaceName string) (string, string, string) {
+func getWirelessLinkInfo(ifaceName string) (string, string, string, string) {
 	output, err := exec.Command("iw", "dev", ifaceName, "link").CombinedOutput()
 	if err != nil {
-		return "", "", ""
+		return "", "", "", ""
 	}
 
 	var signal string
 	var rxRate string
 	var txRate string
+	var freq string
 
 	scanner := bufio.NewScanner(strings.NewReader(string(output)))
 	for scanner.Scan() {
 		line := strings.TrimSpace(scanner.Text())
 		switch {
+		case strings.HasPrefix(line, "freq:"):
+			freq = strings.TrimSpace(strings.TrimPrefix(line, "freq:"))
 		case strings.HasPrefix(line, "signal:"):
 			signal = strings.TrimSpace(strings.TrimPrefix(line, "signal:"))
 		case strings.HasPrefix(line, "rx bitrate:"):
@@ -488,7 +491,48 @@ func getWirelessLinkInfo(ifaceName string) (string, string, string) {
 		}
 	}
 
-	return signal, rxRate, txRate
+	return signal, rxRate, txRate, formatWirelessBand(freq)
+}
+
+func formatWirelessBand(freq string) string {
+	frequency, err := strconv.Atoi(strings.TrimSpace(freq))
+	if err != nil || frequency <= 0 {
+		return ""
+	}
+
+	switch {
+	case frequency >= 2412 && frequency <= 2484:
+		channel := 0
+		if frequency == 2484 {
+			channel = 14
+		} else if (frequency-2407)%5 == 0 {
+			channel = (frequency - 2407) / 5
+		}
+		if channel > 0 {
+			return fmt.Sprintf("2.4GHz (%d)", channel)
+		}
+		return "2.4GHz"
+	case frequency >= 5160 && frequency <= 5885:
+		if (frequency-5000)%5 == 0 {
+			channel := (frequency - 5000) / 5
+			return fmt.Sprintf("5GHz (%d)", channel)
+		}
+		return "5GHz"
+	case frequency >= 5955 && frequency <= 7115:
+		if (frequency-5950)%5 == 0 {
+			channel := (frequency - 5950) / 5
+			return fmt.Sprintf("6GHz (%d)", channel)
+		}
+		return "6GHz"
+	case frequency >= 58320 && frequency <= 70200:
+		if (frequency-56160)%2160 == 0 {
+			channel := (frequency - 56160) / 2160
+			return fmt.Sprintf("60GHz (%d)", channel)
+		}
+		return "60GHz"
+	default:
+		return ""
+	}
 }
 
 func getInterfaceGateway(ifaceName string) string {

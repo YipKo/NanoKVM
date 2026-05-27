@@ -460,13 +460,18 @@ const hu = {
           ipAddress: 'IP-cím',
           subnetMask: 'Alhálózati maszk',
           router: 'Router',
+          band: 'Sáv',
           wired: 'Vezetékes',
           wireless: 'Vezeték nélküli',
           signalStrength: 'Jelerősség',
           rxRate: 'Fogadási sebesség',
           txRate: 'Küldési sebesség',
           none: 'Nincs'
-        }
+        },
+        warningTitle: 'Warning: Network Change',
+        warningDescription: 'Saving network changes may interrupt the current web session. The device may become temporarily unreachable.',
+        warningIpChange: 'Static IP changes may move the device to a different address.',
+        warningConfirm: 'Apply'
       },
       tailscale: {
         title: 'Tailscale',

@@ -459,13 +459,18 @@ const ja = {
           ipAddress: 'IP アドレス',
           subnetMask: 'サブネットマスク',
           router: 'ルーター',
+          band: '帯域',
           wired: '有線',
           wireless: '無線',
           signalStrength: '信号強度',
           rxRate: '受信速度',
           txRate: '送信速度',
           none: 'なし'
-        }
+        },
+        warningTitle: 'Warning: Network Change',
+        warningDescription: 'Saving network changes may interrupt the current web session. The device may become temporarily unreachable.',
+        warningIpChange: 'Static IP changes may move the device to a different address.',
+        warningConfirm: 'Apply'
       },
       tailscale: {
         title: 'Tailscale',

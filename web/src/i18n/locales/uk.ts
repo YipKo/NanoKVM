@@ -458,13 +458,18 @@ const uk = {
           ipAddress: 'IP-адреса',
           subnetMask: 'Маска підмережі',
           router: 'Маршрутизатор',
+          band: 'Діапазон',
           wired: 'Дротова',
           wireless: 'Бездротова',
           signalStrength: 'Рівень сигналу',
           rxRate: 'Швидкість прийому',
           txRate: 'Швидкість передачі',
           none: 'Немає'
-        }
+        },
+        warningTitle: 'Warning: Network Change',
+        warningDescription: 'Saving network changes may interrupt the current web session. The device may become temporarily unreachable.',
+        warningIpChange: 'Static IP changes may move the device to a different address.',
+        warningConfirm: 'Apply'
       },
       tailscale: {
         title: 'Tailscale',

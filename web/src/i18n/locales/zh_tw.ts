@@ -447,11 +447,16 @@ const zh_tw = {
           ipAddress: 'IP 位址',
           subnetMask: '子網路遮罩',
           router: '路由',
+          band: '頻段',
           signalStrength: '訊號強度',
           rxRate: '接收速率',
           txRate: '傳送速率',
           none: '無'
-        }
+        },
+        warningTitle: '警告：網路變更',
+        warningDescription: '儲存網路設定可能會中斷目前的 Web 連線，裝置可能暫時無法存取。',
+        warningIpChange: '變更靜態 IP 可能會導致裝置位址發生變化。',
+        warningConfirm: '繼續'
       },
       tailscale: {
         title: 'Tailscale',

@@ -455,11 +455,16 @@ const en = {
           ipAddress: 'IP Address',
           subnetMask: 'Subnet Mask',
           router: 'Router',
+          band: 'Band',
           signalStrength: 'Signal Strength',
           rxRate: 'Receive Rate',
           txRate: 'Transmit Rate',
           none: 'None'
-        }
+        },
+        warningTitle: 'Warning: Network Change',
+        warningDescription: 'Saving network changes may interrupt the current web session. The device may become temporarily unreachable.',
+        warningIpChange: 'Static IP changes may move the device to a different address.',
+        warningConfirm: 'Apply'
       },
       tailscale: {
         title: 'Tailscale',

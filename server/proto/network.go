@@ -118,6 +118,7 @@ type DNSInfo struct {
 	Address       string   `json:"address"`
 	SubnetMask    string   `json:"subnetMask"`
 	Gateway       string   `json:"gateway"`
+	Band          string   `json:"band"`
 	Signal        string   `json:"signal"`
 	RxRate        string   `json:"rxRate"`
 	TxRate        string   `json:"txRate"`

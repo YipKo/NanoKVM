@@ -447,11 +447,16 @@ const zh = {
           ipAddress: 'IP 地址',
           subnetMask: '子网掩码',
           router: '路由',
+          band: '频段',
           signalStrength: '信号强度',
           rxRate: '接收速率',
           txRate: '发送速率',
           none: '无'
-        }
+        },
+        warningTitle: '警告：网络变更',
+        warningDescription: '保存网络设置可能会中断当前的 Web 连接，设备可能暂时无法访问。',
+        warningIpChange: '更改静态 IP 可能会导致设备地址发生变化。',
+        warningConfirm: '继续'
       },
       tailscale: {
         title: 'Tailscale',

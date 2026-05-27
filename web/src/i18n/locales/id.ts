@@ -457,13 +457,18 @@ const id = {
           ipAddress: 'Alamat IP',
           subnetMask: 'Subnet mask',
           router: 'Router',
+          band: 'Pita',
           wired: 'Berkabel',
           wireless: 'Nirkabel',
           signalStrength: 'Kekuatan sinyal',
           rxRate: 'Kecepatan terima',
           txRate: 'Kecepatan kirim',
           none: 'Tidak ada'
-        }
+        },
+        warningTitle: 'Warning: Network Change',
+        warningDescription: 'Saving network changes may interrupt the current web session. The device may become temporarily unreachable.',
+        warningIpChange: 'Static IP changes may move the device to a different address.',
+        warningConfirm: 'Apply'
       },
       tailscale: {
         title: 'Tailscale',

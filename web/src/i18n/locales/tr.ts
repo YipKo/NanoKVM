@@ -458,13 +458,18 @@ const tr = {
           ipAddress: 'IP Adresi',
           subnetMask: 'Alt Ağ Maskesi',
           router: 'Yönlendirici',
+          band: 'Bant',
           wired: 'Kablolu',
           wireless: 'Kablosuz',
           signalStrength: 'Sinyal gücü',
           rxRate: 'Alış hızı',
           txRate: 'Gönderim hızı',
           none: 'Yok'
-        }
+        },
+        warningTitle: 'Warning: Network Change',
+        warningDescription: 'Saving network changes may interrupt the current web session. The device may become temporarily unreachable.',
+        warningIpChange: 'Static IP changes may move the device to a different address.',
+        warningConfirm: 'Apply'
       },
       tailscale: {
         title: 'Tailscale',

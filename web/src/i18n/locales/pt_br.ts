@@ -458,13 +458,18 @@ const pt_br = {
           ipAddress: 'Endereço IP',
           subnetMask: 'Máscara de sub-rede',
           router: 'Roteador',
+          band: 'Faixa',
           wired: 'Cabeada',
           wireless: 'Sem fio',
           signalStrength: 'Intensidade do sinal',
           rxRate: 'Taxa de recepção',
           txRate: 'Taxa de transmissão',
           none: 'Nenhum'
-        }
+        },
+        warningTitle: 'Warning: Network Change',
+        warningDescription: 'Saving network changes may interrupt the current web session. The device may become temporarily unreachable.',
+        warningIpChange: 'Static IP changes may move the device to a different address.',
+        warningConfirm: 'Apply'
       },
       tailscale: {
         title: 'Tailscale',
